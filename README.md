@@ -1,2 +1,16 @@
-# klencod-flutter-tawasal_maee
-Project created by KLENCOD IDE
+# تواصل معي (Tawasal Maee)
+تطبيق Flutter لمساعدة الصم وغير الناطقين: عبارات مصورة، كتابة ونطق، عرض بالشاشة الكاملة، وبطاقة طوارئ. واجهة عربية RTL.
+
+## التشغيل على الهاتف (أندرويد)
+1. ثبّت Flutter ثم تحقق: `flutter doctor`
+2. من داخل هذا المجلد: `./setup.sh` (على ويندوز: نفّذ أوامر flutter create يدويًا ثم انسخ pubspec.yaml ومجلد lib إلى المشروع الجديد، وأضف إلى AndroidManifest داخل <queries> العنصر: `<intent><action android:name="android.intent.action.TTS_SERVICE"/></intent>`)
+3. على الهاتف: الإعدادات ← حول الهاتف ← اضغط «رقم الإصدار» 7 مرات ← خيارات المطور ← فعّل «تصحيح USB»، ثم وصّله بالحاسوب ووافق على الإذن.
+4. `cd app && flutter devices` ثم `flutter run`
+5. لبناء APK: `flutter build apk --release` ← الملف في `build/app/outputs/flutter-apk/app-release.apk` انسخه للهاتف وثبّته (اسمح بالتثبيت من مصدر غير معروف).
+
+## الصوت دون إنترنت
+على الهاتف: الإعدادات ← اللغة ← تحويل النص إلى كلام (Google) ← نزّل الصوت العربي. إن لم يتوفر الصوت، يعرض التطبيق النص بخط كبير تلقائيًا.
+
+## ملاحظات
+- كل العبارات والأيقونات داخل التطبيق، والبطاقة والسجل محفوظان على الجهاز، فلا حاجة للإنترنت.
+- لإضافة عبارات: عدّل lib/phrases.dart.
